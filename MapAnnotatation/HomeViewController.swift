@@ -104,7 +104,7 @@ class HomeViewController: UIViewController {
     
     @objc func updateLocation() {
         
-        if let myAnnotation:MapAnnotation = arrMapAnnotation?[0] {
+        if let myAnnotation: MapAnnotation = arrMapAnnotation?[0] {
             
             if index == lastIndex {
                 timer?.invalidate()
@@ -126,7 +126,7 @@ class HomeViewController: UIViewController {
                                         
                     UIView.animate(withDuration: 2, delay: 0, options: .allowUserInteraction, animations: {
                         myAnnotation.coordinate = newLocation
-                        let annotationView = weakSelf!.mapView.view(for: myAnnotation)
+                        let annotationView = weakSelf?.mapView.view(for: myAnnotation)
                         annotationView?.transform = CGAffineTransform(rotationAngle: CGFloat(getAngle))
                         weakSelf!.mapView.setCenter(newLocation, animated: true)
                     })

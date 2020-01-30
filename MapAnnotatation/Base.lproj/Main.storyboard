@@ -21,40 +21,18 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ASP-GX-mBE"/>
                                 </connections>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FEC-9A-OWY">
-                                <rect key="frame" x="54" y="135" width="250" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="bKY-Wd-tok"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3d-6h-38f">
-                                <rect key="frame" x="54" y="72" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Blk-ai-Fge" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4We-1h-X9c"/>
                             <constraint firstItem="Blk-ai-Fge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EIP-N5-MZH"/>
-                            <constraint firstItem="FEC-9A-OWY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="91" id="Tmb-qw-4j5"/>
                             <constraint firstAttribute="bottom" secondItem="Blk-ai-Fge" secondAttribute="bottom" id="VBw-Sf-REf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g3d-6h-38f" secondAttribute="trailing" symbolic="YES" id="WR1-PA-ULZ"/>
-                            <constraint firstItem="g3d-6h-38f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="Wdc-cu-oBX"/>
                             <constraint firstItem="Blk-ai-Fge" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="alx-om-5LN"/>
-                            <constraint firstItem="g3d-6h-38f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="cgh-l8-uVl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FEC-9A-OWY" secondAttribute="trailing" constant="110" id="oGA-e5-u5s"/>
-                            <constraint firstItem="FEC-9A-OWY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="tgk-Aw-n9Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="g3d-6h-38f" id="wYC-1i-aYA"/>
                         <outlet property="mapView" destination="Blk-ai-Fge" id="sC9-ay-tp6"/>
-                        <outlet property="textField" destination="FEC-9A-OWY" id="K45-5c-hRg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
