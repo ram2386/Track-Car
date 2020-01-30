@@ -5,7 +5,8 @@ Highlight of the code which I had done it.
 
 For accomplished the functionality for moving the car same as Uber iOS application, you need to first calculate the angle between from old location and new location. Please find the below code for how to calculate it.
 
-func angleFromCoordinate(firstCoordinate: CLLocationCoordinate2D, secondCoordinate: CLLocationCoordinate2D) -> Double {
+    func angleFromCoordinate(firstCoordinate: CLLocationCoordinate2D, 
+        secondCoordinate: CLLocationCoordinate2D) -> Double {
         
         let deltaLongitude: Double = secondCoordinate.longitude - firstCoordinate.longitude
         let deltaLatitude: Double = secondCoordinate.latitude - firstCoordinate.latitude
