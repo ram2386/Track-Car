@@ -1,6 +1,8 @@
 # Track-Car
 Create the application where user can track the car on the map, same like OLA and Uber application do.
 
+![](https://github.com/ram2386/Track-Car/blob/master/Track%20car.gif)
+
 Highlight of the code which I had done it.
 
 For accomplished the functionality for moving the car the same as Uber iOS application, you need to first calculate the angle between old location and new location. Please find the below code for how to calculate it.
