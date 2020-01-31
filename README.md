@@ -25,15 +25,14 @@ For accomplished the functionality for moving the car the same as Uber iOS appli
         }
     }
 
-Then apply the angle to the particular annotation for moving. Please find the below code for the same.
-
+**Apply the angle to the particular annotation for moving**
 let getAngle = angleFromCoordinate(firstCoordinate: oldLocation, secondCoordinate: newLocation)
 
-//Apply the new location for coordinate.        
+**Apply the new location for coordinate**        
 myAnnotation.coordinate = newLocation;
 
-//For getting the MKAnnotationView.
+**Getting the MKAnnotationView**
 let annotationView = self.mapView.view(for: myAnnotation)
 
-//Apply the angle for moving the car.
+**Angle for moving the car**
 annotationView?.transform = CGAffineTransform(rotationAngle: CGFloat(getAngle))
