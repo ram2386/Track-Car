@@ -9,6 +9,5 @@ import UIKit
 import MapKit
 
 class AnnotationView: MKAnnotationView {
-
     var btnInfo: UIButton?
 }

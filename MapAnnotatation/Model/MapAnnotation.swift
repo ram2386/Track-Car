@@ -9,13 +9,12 @@ import UIKit
 import MapKit
 
 class MapAnnotation: NSObject, MKAnnotation {
-    
     /*
      Using dynamic tells Swift to always refer to Objective-C dynamic dispatch.
      This is required for things like Key-Value Observing to work correctly.
      When the Swift function is called, it refers to the Objective-C runtime to dynamically dispatch the call.
+     stackoverflow link: https://stackoverflow.com/questions/40795840/swift-3-dynamic-vs-objc
     */
-    
     dynamic var coordinate: CLLocationCoordinate2D
     dynamic var title: String?
     dynamic var subtitle: String?
