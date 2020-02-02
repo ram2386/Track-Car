@@ -30,20 +30,29 @@ class YourViewController: {
 
 2. Subscribe the PassthroughSubject subject which send the location at 1 second interval
 ```
-   locationService.locationSubject
-    .receive(on: DispatchQueue.main)
-    .sink(receiveCompletion: { (completion) in
-    switch completion {
-        case .failure(let error):
-            ....
-        case .finished:
-            break
-    }
-    }) { [weak self] (location) in
-        ...
-    }
+   cancelSubject = locationService.locationSubject
+              .receive(on: DispatchQueue.main)
+              .sink(receiveCompletion: { (completion) in
+              switch completion {
+                  case .failure(let error):
+                      ....
+                  case .finished:
+                      break
+              }
+              }) { [weak self] (item) in
+                  self?.updateCarLocation(model: item)
+              }
     
     locationService.setupTimerPublisher()
+```
+
+And cancel the subscription when it no longer need.
+
+3. Implement the updateLocationOnMap method of LocationService class where you need to pass the refernce of your MapView, location and MKAnnotation 
+```
+func updateCarLocation(model: CarModel) {
+ self.locationService?.updateLocationOnMap(model: model, myAnnotation: myAnnotation, mapView: mapView)
+}
 ```
 
 ## Roadmap
