@@ -56,10 +56,9 @@ func updateCarLocation(model: CarModel) {
 ```
 
 ## Roadmap
-### Features
+### Feature 
 
 - [ ] Add CocoaPods
-- [ ] Adding the 
  
 ### Improvements/To Do
 - [ ] Apply the smooth animation while moving the car on the map
