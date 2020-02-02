@@ -1,38 +1,65 @@
 # Track-Car
-Create the application where user can track the car on the map, same like OLA and Uber application do.
+**Track-Car** makes it easy to add tracking functionalities to your iOS app! 
 
+## Demo
 ![](https://github.com/ram2386/Track-Car/blob/master/Track%20car.gif)
 
-Highlight of the code which I had done it.
+## Features
+- [x] Use Combine framework for location handling
+- [x] Use Decodable protocol for JSON parsing
+- [x] Support Landscape mode
+- [x] Dark mode
 
-For accomplished the functionality for moving the car the same as Uber iOS application, you need to first calculate the angle between old location and new location. Please find the below code for how to calculate it.
+## Requirements
+ - iOS 13.0+
+ - Xcode 11.0+
+ - Swift 5.0+
+ 
+## Installation
+### Manually
 
-    func angleFromCoordinate(firstCoordinate: CLLocationCoordinate2D, 
-        secondCoordinate: CLLocationCoordinate2D) -> Double {
-        
-        let deltaLongitude: Double = secondCoordinate.longitude - firstCoordinate.longitude
-        let deltaLatitude: Double = secondCoordinate.latitude - firstCoordinate.latitude
-        let angle = (Double.pi * 0.5) - atan(deltaLatitude / deltaLongitude)
-        
-        if (deltaLongitude > 0) {
-            return angle
-        } else if (deltaLongitude < 0) {
-            return angle + Double.pi
-        } else if (deltaLatitude < 0) {
-            return Double.pi
-        } else {
-            return 0.0
-        }
-    }
+Just download the project, drag and drop the "TrackCar" folder in your application.
 
-**Apply the angle to the particular annotation for moving**
->let getAngle = angleFromCoordinate(firstCoordinate: oldLocation, secondCoordinate: newLocation)
+## Usage
+1. Create the LocationService and implement in your view controller
+```
+class YourViewController: {
+    let locationService = LocationService()    
+}
+```
 
-**Apply the new location for coordinate**        
->myAnnotation.coordinate = newLocation;
+2. Subscribe the PassthroughSubject subject which send the location at 1 second interval
+```
+   cancelSubject = locationService.locationSubject
+              .receive(on: DispatchQueue.main)
+              .sink(receiveCompletion: { (completion) in
+              switch completion {
+                  case .failure(let error):
+                      ....
+                  case .finished:
+                      break
+              }
+              }) { [weak self] (item) in
+                  self?.updateCarLocation(model: item)
+              }
+    
+    locationService.setupTimerPublisher()
+```
 
-**Getting the MKAnnotationView**
->let annotationView = self.mapView.view(for: myAnnotation)
+<i>And cancel the subscriber when it no longer needs to receive elements. For ie.</i> <b>```cancelSubject.cancel()```</b>
 
-**Angle for moving the car**
->annotationView?.transform = CGAffineTransform(rotationAngle: CGFloat(getAngle))
+3. Implement the updateLocationOnMap method of LocationService class where you need to pass the refernce of your MapView, location and MKAnnotation 
+```
+func updateCarLocation(model: CarModel) {
+ self.locationService?.updateLocationOnMap(model: model, myAnnotation: myAnnotation, mapView: mapView)
+}
+```
+
+## Roadmap
+### Features
+
+- [ ] Add CocoaPods
+- [ ] Adding the 
+ 
+### Improvements/To Do
+- [ ] Apply the smooth animation while moving the car on the map
