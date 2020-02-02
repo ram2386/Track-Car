@@ -46,7 +46,7 @@ class YourViewController: {
     locationService.setupTimerPublisher()
 ```
 
-And cancel the subscription when it no longer need.
+<b>And cancel the subscription when it no longer need.</b>
 
 3. Implement the updateLocationOnMap method of LocationService class where you need to pass the refernce of your MapView, location and MKAnnotation 
 ```
