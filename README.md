@@ -3,36 +3,31 @@ Create the application where user can track the car on the map, same like OLA an
 
 ![](https://github.com/ram2386/Track-Car/blob/master/Track%20car.gif)
 
-Highlight of the code which I had done it.
+## Main features
+- [x] Use Combine framework for location handling
+- [x] Use Decodable protocol for JSON parsing
+- [x] Dark mode
+- [x] Add/delete/edit/complete tasks
 
-For accomplished the functionality for moving the car the same as Uber iOS application, you need to first calculate the angle between old location and new location. Please find the below code for how to calculate it.
+## Requirements
+ - iOS 13.0+
+ - Xcode 11.0+
+ - Swift 5.0+
+ 
+ ## How to run
 
-    func angleFromCoordinate(firstCoordinate: CLLocationCoordinate2D, 
-        secondCoordinate: CLLocationCoordinate2D) -> Double {
-        
-        let deltaLongitude: Double = secondCoordinate.longitude - firstCoordinate.longitude
-        let deltaLatitude: Double = secondCoordinate.latitude - firstCoordinate.latitude
-        let angle = (Double.pi * 0.5) - atan(deltaLatitude / deltaLongitude)
-        
-        if (deltaLongitude > 0) {
-            return angle
-        } else if (deltaLongitude < 0) {
-            return angle + Double.pi
-        } else if (deltaLatitude < 0) {
-            return Double.pi
-        } else {
-            return 0.0
-        }
-    }
+1. Clone the repo
+2. Run ```pod install``` in terminal to install required pods. Make sure you have [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) installed.
+3. Turn on iCloud option in ```Signing & Capabilities``` and check ```CloudKit```. Turn on ```Background Modes``` and check ```Background fetch``` + ```Remote notification```.
+4. Make sure to update your app group config (```Signing & Capabilities```, ```App Groups```) and id string in ```RealmManager.swift```.
+5. (Optional) You might want to update or remove [Fabric](https://fabric.io/home) script located ```Build Phases```.
 
-**Apply the angle to the particular annotation for moving**
->let getAngle = angleFromCoordinate(firstCoordinate: oldLocation, secondCoordinate: newLocation)
+ ## Roadmap
 
-**Apply the new location for coordinate**        
->myAnnotation.coordinate = newLocation;
+### Features
 
-**Getting the MKAnnotationView**
->let annotationView = self.mapView.view(for: myAnnotation)
-
-**Angle for moving the car**
->annotationView?.transform = CGAffineTransform(rotationAngle: CGFloat(getAngle))
+- [ ] Add CocoaPods
+- [ ] Adding the 
+ 
+### Improvements/To Do
+- [ ] Apply the smooth animation while moving the car on the map
