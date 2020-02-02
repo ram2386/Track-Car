@@ -1,14 +1,14 @@
 # Track-Car
 **Track-Car** makes it easy to add tracking functionalities to your iOS app! 
 
+## Demo
+![](https://github.com/ram2386/Track-Car/blob/master/Track%20car.gif)
+
 ## Features
 - [x] Use Combine framework for location handling
 - [x] Use Decodable protocol for JSON parsing
 - [x] Support Landscape mode
 - [x] Dark mode
-
-## Demo
-![](https://github.com/ram2386/Track-Car/blob/master/Track%20car.gif)
 
 ## Requirements
  - iOS 13.0+
