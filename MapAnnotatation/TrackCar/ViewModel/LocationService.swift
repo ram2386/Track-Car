@@ -86,7 +86,7 @@ class LocationService: NSObject {
     }
     
     //MARK:- Utility Method
-    func updateLocation(model: CarModel, myAnnotation: MapAnnotation, mapView: MKMapView) {
+    func updateLocationOnMap(model: CarModel, myAnnotation: MapAnnotation, mapView: MKMapView) {
         
             let oldLocation = CLLocationCoordinate2DMake(model.oldlatitude.truncate(places: truncate), model.oldlongitude.truncate(places: truncate))
             let newLocation = CLLocationCoordinate2D(latitude: model.latitude.truncate(places: truncate) , longitude: model.longitude.truncate(places: truncate))

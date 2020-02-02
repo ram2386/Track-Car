@@ -62,16 +62,16 @@ class HomeViewController: UIViewController {
                                     break
                             }
                             }) { [weak self] (carModel) in
-                                self?.updateLocation(model: carModel)
+                                self?.updateCarLocation(model: carModel)
                             }
         
         self.locationService?.setupTimerPublisher()
     }
     
-    func updateLocation(model: CarModel) {
+    func updateCarLocation(model: CarModel) {
         
         if let myAnnotation: MapAnnotation = arrMapAnnotation?[0] {
-            self.locationService?.updateLocation(model: model, myAnnotation: myAnnotation, mapView: mapView)
+            self.locationService?.updateLocationOnMap(model: model, myAnnotation: myAnnotation, mapView: mapView)
         }
     }
     
