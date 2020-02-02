@@ -59,6 +59,7 @@ func updateCarLocation(model: CarModel) {
 ### Feature 
 
 - [ ] Add CocoaPods
+- [ ] Show the callout view when tapping on car icon
  
 ### Improvements/To Do
 - [ ] Apply the smooth animation while moving the car on the map
