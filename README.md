@@ -59,6 +59,7 @@ func updateCarLocation(model: CarModel) {
 ### Feature 
 
 - [ ] Add CocoaPods
+- [ ] Show the path on the map
 - [ ] Show the callout view when tapping on car icon
  
 ### Improvements/To Do
