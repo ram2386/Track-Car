@@ -64,6 +64,6 @@ func updateCarLocation(model: CarModel) {
 ### Improvements/To Do
 - [ ] Apply the smooth animation while moving the car on the map
 
-### License
+## License
 
 `Track-Car` is available under the MIT license, see the [LICENSE](https://github.com/ram2386/Track-Car/blob/master/LICENSE) file for more information.
